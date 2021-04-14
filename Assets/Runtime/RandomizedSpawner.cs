@@ -6,6 +6,8 @@ namespace IronBelly.Test
 {
     public class RandomizedSpawner : MonoBehaviour
     {
+        public float Radius { get { return spawnZoneSize.magnitude; } }
+
         [SerializeField] private Vector3 spawnZoneSize;
 
         public Vector3 GetRandomPointInSphere()

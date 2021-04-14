@@ -417,10 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ac66fc2b60b0d40bcb83fe02a75871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomZoneSpawner: {fileID: 297832738}
   instancesToSpawn: {fileID: 1089817747}
   poolManager: {fileID: 1218862550}
-  totalPoolPopulation: 20
-  randomZoneSpawner: {fileID: 297832738}
+  totalPoolPopulation: 2
   spawnButton: {fileID: 80379253}
 --- !u!4 &297832737
 Transform:

@@ -7,14 +7,23 @@ namespace IronBelly.Test
 {
     public class DemoManager : MonoBehaviour
     {
+        [SerializeField] public RandomizedSpawner RandomZoneSpawner;
+
         [SerializeField] private InputField instancesToSpawn;
         [SerializeField] private PoolManager poolManager;
         [SerializeField] private int totalPoolPopulation;
-        [SerializeField] private RandomizedSpawner randomZoneSpawner;
         [SerializeField] private Button spawnButton;
+
+        public static DemoManager Instance()
+        {
+            return instance;
+        }
+
+        private static DemoManager instance;
 
         private void Awake()
         {
+            instance = this;
             spawnButton.onClick.AddListener(Spawn);
         }
 
@@ -22,7 +31,7 @@ namespace IronBelly.Test
         {
             poolManager.Preload(totalPoolPopulation);
 
-            Vector3 randomPointInZone = randomZoneSpawner.GetRandomPointInSphere();
+            Vector3 randomPointInZone = RandomZoneSpawner.GetRandomPointInSphere();
         }
 
         private void Spawn()
