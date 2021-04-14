@@ -11,9 +11,12 @@ namespace IronBelly.Test
         [SerializeField] public RandomizedSpawner RandomZoneSpawner;
 
         [SerializeField] private InputField instancesToSpawn;
+        [SerializeField] private Text instancesSpawnedLabel;
         [SerializeField] private PoolManager poolManager;
         [SerializeField] private int totalPoolPopulation;
         [SerializeField] private Button spawnButton;
+
+        private const string instancesSpawnedFormatText = "Total Spawned: {0}";
 
         public event Action<int> OnSpawnCubes;
 
@@ -46,6 +49,8 @@ namespace IronBelly.Test
 
             poolManager.DespawnActiveInstances();
             poolManager.Spawn(cubesToSpawn);
+
+            instancesSpawnedLabel.text = string.Format(instancesSpawnedFormatText, cubesToSpawn);
 
             if (OnSpawnCubes != null) OnSpawnCubes.Invoke(cubesToSpawn);
         }
