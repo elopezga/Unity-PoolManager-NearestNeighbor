@@ -41,12 +41,13 @@ namespace IronBelly.Test
         {
             Text input = instancesToSpawn.GetComponentInChildren<Text>();
 
-            int value = System.Convert.ToInt32(input.text);
+            int cubesToSpawn;
+            if (!Int32.TryParse(input.text, out cubesToSpawn)) return;
 
             poolManager.DespawnActiveInstances();
-            poolManager.Spawn(value);
+            poolManager.Spawn(cubesToSpawn);
 
-            if (OnSpawnCubes != null) OnSpawnCubes.Invoke(value);
+            if (OnSpawnCubes != null) OnSpawnCubes.Invoke(cubesToSpawn);
         }
     }
 }
