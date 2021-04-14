@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ namespace IronBelly.Test
         [SerializeField] private PoolManager poolManager;
         [SerializeField] private int totalPoolPopulation;
         [SerializeField] private Button spawnButton;
+
+        public event Action<int> OnSpawnCubes;
 
         public static DemoManager Instance()
         {
@@ -42,6 +45,8 @@ namespace IronBelly.Test
 
             poolManager.DespawnActiveInstances();
             poolManager.Spawn(value);
+
+            if (OnSpawnCubes != null) OnSpawnCubes.Invoke(value);
         }
     }
 }

@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ac66fc2b60b0d40bcb83fe02a75871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomZoneSpawner: {fileID: 297832738}
+  RandomZoneSpawner: {fileID: 297832738}
   instancesToSpawn: {fileID: 1089817747}
   poolManager: {fileID: 1218862550}
   totalPoolPopulation: 2
@@ -832,7 +832,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -985,7 +985,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 44.33}
+  m_SizeDelta: {x: 109.9, y: 44.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089817747
 MonoBehaviour:
@@ -1268,7 +1268,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -249
+  m_Spacing: -124
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
