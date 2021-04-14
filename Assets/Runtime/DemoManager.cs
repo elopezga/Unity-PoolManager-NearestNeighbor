@@ -31,6 +31,7 @@ namespace IronBelly.Test
 
             int value = System.Convert.ToInt32(input.text);
 
+            poolManager.DespawnActiveInstances();
             poolManager.Spawn(value);
         }
     }

@@ -31,6 +31,11 @@ namespace IronBelly.Test
         {
             GameObject instance = population.Where(gameObject => gameObject.active.Equals(false)).FirstOrDefault();
 
+            if (instance == null)
+            {
+                instance = ExpandPool();
+            }
+
             // If instance is null (no available in pool) add to the pool
 
 
@@ -46,9 +51,19 @@ namespace IronBelly.Test
             }
         }
 
-        public void Despawn()
+        public void DespawnActiveInstances()
         {
+            population.Where(gameObject => gameObject.active.Equals(true))
+            .ToList()
+            .ForEach(gameObject => gameObject.SetActive(false));
+        }
 
+        private GameObject ExpandPool()
+        {
+            GameObject instance = GameObject.Instantiate(prefab, transform);
+            population.Add(instance);
+
+            return instance;
         }
     }
 }
